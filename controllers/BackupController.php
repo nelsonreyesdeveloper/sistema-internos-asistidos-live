@@ -11,10 +11,10 @@ class BackupController
     {
 
         try {
-            $dbHost = $_ENV['HOST_DB'] ?? null;
-            $dbUser = $_ENV['USER_DB'] ?? null;
-            $dbPass = $_ENV['PASS_DB'] ?? null;
-            $dbName = $_ENV['DB_DB'] ?? null;
+            $dbHost = $_ENV['DB_HOST'] ?? null;
+            $dbUser = $_ENV['DB_USER'] ?? null;
+            $dbPass = $_ENV['DB_PASS'] ?? null;
+            $dbName = $_ENV['DB_NAME'] ?? null;
 
             // Verificar que las variables de entorno estén definidas
             if (empty($dbHost) || empty($dbUser) || is_null($dbName)) {
