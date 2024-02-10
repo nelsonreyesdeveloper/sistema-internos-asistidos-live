@@ -1165,6 +1165,85 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 return
             }
+
+            const inputValue = document.querySelector('#autocompleteInput').value.trim();
+            var inputBusqueda = document.querySelector('#newinterno-input').value.trim().toLowerCase();
+
+
+            // Convertir ambas cadenas a minúsculas antes de dividirlas en palabras
+            var palabrasGrupo1 = inputValue.toLowerCase().split(' ');
+            var palabrasGrupo2 = inputBusqueda.toLowerCase().split(' ');
+
+            var coincidencia = false;
+
+            // Verificar si hay al menos una palabra coincidente
+            for (var i = 0; i < palabrasGrupo1.length; i++) {
+                if (palabrasGrupo2.includes(palabrasGrupo1[i])) {
+                    coincidencia = true;
+                    break;
+                }
+            }
+
+            if (coincidencia) {
+
+                try {
+                    const response = await fetch('/users?search=' + inputValue);
+                    const data = await response.json();
+
+                    while (suggestionsList.firstChild) {
+                        suggestionsList.removeChild(suggestionsList.firstChild);
+                    }
+
+                    if (document.querySelector('#erroresidinterno')) {
+                        document.querySelector('#erroresidinterno').remove();
+                    }
+
+                    if (data.length == 0) {
+                        const p = document.createElement('p');
+                        p.textContent = "No se encontraron resultados";
+                        p.classList.add('text-danger', 'text-end', 'col-12', 'fw-semibold');
+                        p.id = "erroresidinterno";
+                        autocompleteInput.parentElement.appendChild(p);
+                    }
+                    data.forEach(user => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('list-group-item', 'col-12', 'pe-auto');
+
+                        listItem.innerHTML = user.id + ' - ' + user.name + ' - <span class="fw-bold">DUI: </span>' + (user.dui.trim().length > 0 ? '<strong>' + user.dui + '</strong>' : '<span class="text-danger fw-bold">' + 'SIN DUI' + '</span>');
+
+
+                        listItem.addEventListener('click', () => {
+                            while (suggestionsList.firstChild) {
+                                suggestionsList.removeChild(suggestionsList.firstChild);
+                            }
+
+                            detener = true;
+
+                            if (document.querySelector('#userexistente')) {
+                                document.querySelector('#userexistente').remove();
+                            }
+
+                            autocompleteInput.value = user.name;
+                            expediente['id-interno'] = user.id;
+
+                            if (document.querySelector('#erroresidinterno')) {
+                                document.querySelector('#erroresidinterno').remove();
+                            }
+
+                            const p = document.createElement('p');
+                            p.textContent = "Este usuario está registrado en el sistema";
+                            p.classList.add('text-success', 'text-end', 'col-12', 'fw-semibold');
+                            p.id = "userexistente";
+                            autocompleteInput.parentElement.appendChild(p);
+                        });
+
+                        suggestionsList.appendChild(listItem);
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
             if (document.querySelector('#newinterno-input')) {
                 document.querySelector('#newinterno-input').value = ''
             }
@@ -1175,6 +1254,7 @@ document.addEventListener('DOMContentLoaded', () => {
             /* vaciar objeto */
             nombreinterno['nombre'] = ''
             nombreinterno['dui'] = ''
+
 
         } catch (error) {
             console.log(error);
