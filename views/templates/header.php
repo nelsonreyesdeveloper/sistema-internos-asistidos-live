@@ -18,7 +18,18 @@
 
               <div>
                   <p style="background-color:#313945; width: 100%; text-align: center; " class="text-white titulo-family mb-0 fw-bold">JUZGADO TERCERO DE VIGILANCIA PENITENCIARIA Y DE EJECUCIÓN DE LA PENA</p>
-                  <p style="background-color:#313945; width: 100%; text-align: center; " class="text-white titulo-family fw-bold">SAN MIGUEL</p>
+                  <p style="background-color:#313945; width: 100%; text-align: center; " class="text-white titulo-family mb-0 fw-bold">SAN MIGUEL</p>
+                  <!-- SABER SI ESTOY EN LOCALHOST O EN UN HOSTING -->
+                  <?php if (strpos($_SERVER['HTTP_HOST'], 'sistema-internos-asistidos-php.test') !== false) : ?>
+
+                      <p style="background-color:#313945; width: 100%; text-align: center; " class="text-white titulo-family fw-bold">SISTEMA DE LARAGON</p>
+
+                  <?php else : ?>
+
+                      <p style="background-color:#313945; width: 100%; text-align: center; " class="text-white titulo-family fw-bold">SISTEMA EN LÍNEA</p>
+
+                  <?php endif; ?>
+
 
               </div>
 
