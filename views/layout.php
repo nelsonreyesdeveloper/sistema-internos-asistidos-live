@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
 
     <!-- Vincular hojas de estilo CSS -->
-    <link rel="stylesheet" href="build/css/jquery-dataTables.min.css">
+    <link rel="stylesheet" href="build/css/estilosdatatables.css">
     <link rel="stylesheet" href="build/css/buttons-dataTables.min.css">
     <link rel="stylesheet" href="build/css/font-awesome.min.css">
 
