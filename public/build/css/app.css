@@ -128,16 +128,32 @@
 .campo {
   display: flex;
   margin-bottom: 2rem;
-  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .campo {
+    align-items: center;
+    flex-direction: row;
+  }
 }
 .campo label {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: 700;
   color: rgb(0, 0, 0);
-  flex-basis: 5rem;
+}
+@media (min-width: 768px) {
+  .campo label {
+    width: auto;
+    margin-bottom: 0px;
+    flex-basis: 6rem;
+  }
 }
 .campo input {
   flex: 1;
   border: none;
-  padding: 1.25rem;
+  padding: 0.8333333333rem;
   border-radius: 1rem;
 }
 .campo input:disabled {
@@ -146,7 +162,11 @@
   cursor: not-allowed;
 }
 
-.boton {
+.alinear-derecha {
+  display: flex;
+  justify-content: flex-end;
+}
+.alinear-derecha .boton {
   background-color: #313945;
   padding: 1.5rem 4rem;
   color: #FFFFFF;
@@ -158,14 +178,19 @@
   text-align: center;
   width: 100%;
   display: inline-block;
-  width: min-content;
+  width: 100%;
+  border-radius: 3px;
   padding: 2px 5px;
-  text-align: end;
   font-size: 20px;
 }
-.boton:hover {
+.alinear-derecha .boton:hover {
   background-color: #1c2027;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .alinear-derecha .boton {
+    width: auto;
+  }
 }
 
 .boton-eliminar {

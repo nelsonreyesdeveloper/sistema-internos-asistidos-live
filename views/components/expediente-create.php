@@ -119,28 +119,26 @@
                             <div class="card-header fw-bold text-center  fs-5">LISTADO DE INTERNOS/ASISTIDOS</div>
                             <div class="card-body">
                                 <form id="newinterno-form" method="POST">
-                                    <div class="d-flex gap-2 ">
-                                        <div class="col-md-6">
-                                            <div class="">
-                                                <label for="recipient-name" class="form-label fw-semibold">REGISTRAR
-                                                    NUEVO
-                                                    INTERNO/ASISTIDO</label>
-                                                <input required autocomplete="off" id="newinterno-input" type="text" placeholder="EJEMPLO: RAUL ANTONIO SERPAS FUNES" class="form-control">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group mb-3 mb-md-0">
+                                                    <label for="newinterno-input" class="form-label fw-semibold">REGISTRAR NUEVO INTERNO/ASISTIDO</label>
+                                                    <input required autocomplete="off" id="newinterno-input" type="text" placeholder="EJEMPLO: RAUL ANTONIO SERPAS FUNES" class="form-control">
+                                                </div>
                                             </div>
-
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="">
-                                                <label for="recipient-name" class="form-label fw-semibold">DUI</label>
-                                                <input required autocomplete="off" id="newinterno-dui-input" type="text" placeholder="EJEMPLO: 05053426-3" class="form-control">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="newinterno-dui-input" class="form-label fw-semibold">DUI</label>
+                                                    <input required autocomplete="off" id="newinterno-dui-input" type="text" placeholder="EJEMPLO: 05053426-3" class="form-control">
+                                                </div>
                                             </div>
-
+                                            <div class="col-lg-2 d-md-flex align-items-md-end justify-content-md-end">
+                                                <button type="submit" id="btn-save-newinterno" class="btn btn-primary mt-2 mt-md-0">Guardar</button>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 align-self-end">
-                                            <button type="submit" id="btn-save-newinterno" class="btn btn-primary mt-2">Guardar</button>
-                                        </div>
-
                                     </div>
+
 
                                 </form>
 

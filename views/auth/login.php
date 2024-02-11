@@ -16,7 +16,11 @@
             <?php
             include_once __DIR__ . "/../templates/alertas.php";
             ?>
-            <input type="submit" class="boton" value="Iniciar Sesión">
+            <div class="alinear-derecha">
+
+                <input type="submit" class="boton" value="Iniciar Sesión">
+
+            </div>
         </form>
     </div>
 </div>

@@ -81,6 +81,7 @@
     font-family: "Salsa";
 
     font-size: 12px;
+
     @include m.tablet {
         font-size: 20px;
     }
@@ -132,17 +133,31 @@
 .campo {
     display: flex;
     margin-bottom: 2rem;
-    align-items: center;
+    flex-direction: column;
+
+    @include m.tablet {
+        align-items: center;
+        flex-direction: row;
+    }
 
     label {
+        text-align: left;
+        width: 100%;
+        margin-bottom:10px ;
+        font-weight: 700;
         color: rgb(0, 0, 0);
-        flex-basis: 5rem;
+        
+        @include m.tablet {
+            width: auto;
+            margin-bottom: 0px;
+            flex-basis: 6rem;
+        }
     }
 
     input {
         flex: 1;
         border: none;
-        padding: calc(v.$separacion / 4);
+        padding: calc(v.$separacion / 6);
         border-radius: 1rem;
 
         &:disabled {
@@ -153,13 +168,28 @@
     }
 }
 
-.boton {
-    @include m.boton(#313945, v.$blanco);
-    width: min-content;
-    padding: 2px 5px;
-    text-align: end;
-    font-size: 20px;
+.alinear-derecha {
+    display: flex;
+    justify-content: flex-end;
+
+    .boton {
+        @include m.boton(#313945, v.$blanco);
+        width: 100%;
+        // text-align: center !important;
+        border-radius: 3px;
+        // margin: 0 auto;
+        padding: 2px 5px;
+        font-size: 20px;
+
+        @include m.tablet {
+
+            width: auto;
+        }
+    }
+
 }
+
+
 
 .boton-eliminar {
     @include m.boton(v.$rojo, v.$blanco);
