@@ -31,13 +31,13 @@
 
 </head>
 
-<body>
+<body style="height:100vh; display: flex; justify-content: space-between;flex-direction: column">
     <?php
     include_once __DIR__ . '/templates/header.php';
     echo $contenido;
     include_once __DIR__ . '/templates/footer.php';
     ?>
-  
+
 
 </body>
 

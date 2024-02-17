@@ -83,8 +83,10 @@
 
 .contenedor-app {
   background-color: #e5e5e5;
-  margin-bottom: -50px;
-  padding-bottom: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .contenedor-app {
@@ -116,7 +118,6 @@
 }
 
 .formulario {
-  padding-top: 1rem;
   width: 100%;
 }
 @media (min-width: 768px) {

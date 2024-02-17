@@ -1,4 +1,4 @@
-<nav style="background-color:#313945;margin-top: 50px;padding: 20px" class="navbar navbar-expand-md navbar-light  shadow-sm">
+<nav style="background-color:#313945;padding: 20px" class="navbar navbar-expand-md navbar-light  shadow-sm">
     <div style="width: 90%; margin:0 auto;">
         <div class=" d-flex justify-content-center ">
 
