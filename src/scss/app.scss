@@ -1,206 +1,220 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+@use "base/variables" as v;
+@use "base/mixins" as m;
 
 .pdf-button {
-    background-color: #000 !important;
-    color: #fff !important;
-    font-weight: 500 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
 }
 
 .dt-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .select-button {
-    background-color: #000 !important;
-    color: #fff !important;
-    display: flex !important;
-    gap: 10px !important;
-
+  background-color: #000 !important;
+  color: #fff !important;
+  display: flex !important;
+  gap: 10px !important;
 }
 
 .select-button .custom-select {
-    background-color: #000 !important;
-    color: #fff !important;
+  background-color: #000 !important;
+  color: #fff !important;
 }
 
 .scroll-button {
-    position: fixed;
-    font-size: 24px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
+  position: fixed;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
 
-    border-radius: 50%;
-    display: none;
-    z-index: 1000;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
 }
 
 .scroll-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 #scrollDown {
-    bottom: 20px;
-    right: 20px;
+  bottom: 20px;
+  right: 20px;
 }
 
 #scrollUp {
-    bottom: 80px;
-    right: 20px;
+  bottom: 80px;
+  right: 20px;
 }
 
 #users-table {
-    width: 100% !important;
+  width: 100% !important;
 }
-
 
 /* Bootstrap 5 text input with search icon */
 
 .has-search .form-control {
-    padding-left: 2.375rem;
+  padding-left: 2.375rem;
 }
 
 .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
 }
 
 .titulo-family {
-    font-family: "Salsa";
+  font-family: "Salsa";
 
-    font-size: 12px;
+  font-size: 12px;
 
-    @include m.tablet {
-        font-size: 20px;
-    }
+  @include m.tablet {
+    font-size: 20px;
+  }
 }
 
 .contenedor-app {
-    background-color: #e5e5e5;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: #e5e5e5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    min-height: 100vh;
+    padding-bottom: 0;
+  }
+
+  .imagen {
+    background-image: url(../img/logoGoes.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #313945d8;
+
     @include m.tablet {
-        display: grid;
-        grid-template-columns: 60% 40%;
-        min-height: 100vh;
-        padding-bottom: 0;
+      height: auto;
     }
+  }
 
-    .imagen {
-        background-image: url(../img/logoGoes.png);
-        background-size: auto;
-        background-position: center center;
+  .app {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0em 0;
 
-        @include m.tablet {
-            height: auto;
-        }
+    @include m.tablet {
+      overflow: scroll;
     }
-
-    .app {
-        width: 95%;
-        margin: 0 auto;
-        padding: 0em 0;
-
-        @include m.tablet {
-            overflow: scroll;
-        }
-    }
+  }
 }
 
 .formulario {
-    width: 100%;
+  width: 100%;
+}
 
-    @include m.tablet {
+.formulario legend {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
-        margin-top: 5rem;
-    }
+.formulario_styles {
+
+  background-color: #d4d4d4;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.6);
+  @include m.tablet {
+    margin: 5rem 1rem;
+  }
 }
 
 .campo {
-    display: flex;
-    margin-bottom: 2rem;
-    flex-direction: column;
+  display: flex;
+  margin-bottom: 2rem;
+  flex-direction: column;
+
+  @include m.tablet {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
 
     @include m.tablet {
-        align-items: center;
-        flex-direction: row;
+      width: auto;
+      margin-bottom: 0px;
+      flex-basis: 6rem;
     }
+  }
 
-    label {
-        text-align: left;
-        width: 100%;
-        margin-bottom:10px ;
-        font-weight: 700;
-        color: rgb(0, 0, 0);
-        
-        @include m.tablet {
-            width: auto;
-            margin-bottom: 0px;
-            flex-basis: 6rem;
-        }
+  input {
+    flex: 1;
+    border: none;
+    padding: calc(v.$separacion / 6);
+    border-radius: 1rem;
+    border: 1px solid #a3a3a3;
+
+    &:disabled {
+      background-color: lighten(v.$negro, 30%);
+      color: v.$blanco;
+      cursor: not-allowed;
     }
-
-    input {
-        flex: 1;
-        border: none;
-        padding: calc(v.$separacion / 6);
-        border-radius: 1rem;
-
-        &:disabled {
-            background-color: lighten(v.$negro, 30%);
-            color: v.$blanco;
-            cursor: not-allowed;
-        }
-    }
+  }
 }
 
 .alinear-derecha {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 
-    .boton {
-        @include m.boton(#313945, v.$blanco);
-        width: 100%;
-        // text-align: center !important;
-        border-radius: 3px;
-        // margin: 0 auto;
-        padding: 2px 5px;
-        font-size: 20px;
+  .boton {
+    @include m.boton(#313945, v.$blanco);
+    width: 100%;
+    // text-align: center !important;
+    border-radius: 3px;
+    // margin: 0 auto;
+    padding: 2px 5px;
+    font-size: 20px;
+    border-radius: 10px;
 
-        @include m.tablet {
-
-            width: auto;
-        }
+    @include m.tablet {
+      width: auto;
     }
-
+  }
 }
 
-
-
 .boton-eliminar {
-    @include m.boton(v.$rojo, v.$blanco);
+  @include m.boton(v.$rojo, v.$blanco);
 }
 
 .alerta.error {
-    color: #990000;
-    padding: 2px 5px;
-    font-size: 18px;
-    margin-bottom: 5px;
-    text-align: center;
-    font-weight: 800;
-    border-radius: 5px;
+  color: #990000;
+  padding: 2px 5px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 5px;
 }

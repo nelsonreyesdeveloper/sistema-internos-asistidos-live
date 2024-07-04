@@ -98,8 +98,10 @@
 }
 .contenedor-app .imagen {
   background-image: url(../img/logoGoes.png);
-  background-size: auto;
+  background-size: contain;
   background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(49, 57, 69, 0.8470588235);
 }
 @media (min-width: 768px) {
   .contenedor-app .imagen {
@@ -120,9 +122,26 @@
 .formulario {
   width: 100%;
 }
+
+.formulario legend {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.formulario_styles {
+  background-color: #d4d4d4;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 23px -7px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 23px -7px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 23px -7px rgba(0, 0, 0, 0.6);
+}
 @media (min-width: 768px) {
-  .formulario {
-    margin-top: 5rem;
+  .formulario_styles {
+    margin: 5rem 1rem;
   }
 }
 
@@ -156,6 +175,7 @@
   border: none;
   padding: 0.8333333333rem;
   border-radius: 1rem;
+  border: 1px solid #a3a3a3;
 }
 .campo input:disabled {
   background-color: #6d7158;
@@ -183,6 +203,7 @@
   border-radius: 3px;
   padding: 2px 5px;
   font-size: 20px;
+  border-radius: 10px;
 }
 .alinear-derecha .boton:hover {
   background-color: #1c2027;
